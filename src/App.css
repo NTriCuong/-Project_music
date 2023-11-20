@@ -1,38 +1,288 @@
+::-webkit-scrollbar{
+  width: 0px;
+}
+body{
+  overflow: hidden;
+  background-color: #000000;
+  color: #b3b3b3;
+}
 .App {
-  text-align: center;
+  box-sizing: border-box;
+  color: #b3b3b3;
+  font-size: 15px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container{
   display: flex;
-  flex-direction: column;
+  width: 100%;
+  height:  725px;
+  margin-top: 10px;
+}
+.sidebar{
+  width: 20%;
+  border: 1px solid black;
+  border-radius: 15px;
+  margin-right: 5px;
+  background-color: #121212;
+}
+.page-right{
+  width: 80%;
+  height: 100%;
+  border: 1px solid black;
+  border-radius: 15px;
+  margin-left: 5px;
+  background-color: #121212;
+}
+header{
+  width: 100%;
+  display:  flex;
+  justify-content: space-between;
+  font-size: 20px;
+}
+.content{
+  width: 100%;
+  height: 600px;
+  margin-left: 30px;
+  /* để có thể kéo 1 khối mà cả web không chạy theo  */
+  overflow: auto;
+
+}
+.sidebar-home,
+.sidebar-search,
+.sidebar-library-box,
+.header-left{
+  margin: 30px;
+}
+
+.sidebar
+a{
+  color: #b3b3b3;
+  text-decoration: none;
+  /* bỏ đưỜng viền thẻ a */
+}
+.sidebar-library-box{
+  display: flex;
+  justify-content: space-between;
+}
+.sidebar-library-plus{
+  margin-right: 10px;
+}
+
+.header-outline-left{
+  margin-right: 10px;
+}
+.header-right{
+  font-size: 25px;
+  margin-right: 30px;
+  display: flex;
+  align-items: center;
+}
+.header-bell{
+  margin-right: 10px;
+}
+.header-premium{
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  color: #121212;
+  background-color: #fff;
+  border-radius: 15px;
+  width: 160px;
+  height: 30px;
+  font-size: 15px;
+  margin-right: 50px;
+}
+.header-premium a{
+  text-decoration: none;
+}
+.header-left{
+  display: flex;
+  align-items: center;
+}
+.content-charts,
+.content-other{
+  /* overflow: hidden; để cho giao diện của 2 khối content-charts và content-other không bị kéo ngang */
+  overflow: hidden;
+  width: 100%;
+}
+.content-list{
+  display: flex;
+  list-style: none;
+  width: 100%;
+  height: 85%;
+  flex-wrap: wrap;
 }
 
-.App-link {
-  color: #61dafb;
+
+.content-list-item{
+  width: 20%;
+  margin-right: 20px;
+  padding-top: 0;
+  border-radius: 25px;
+  cursor: pointer;
+}
+.content-list-item:hover{
+  background: #242424;
+}
+.content-list-item > div {
+  width: 150px;
+  height: 150px;
+  margin: 20px auto;
+}
+.content-list-item img{
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+}
+.content-name-name,
+.content-name-singer{
+  margin: 0;
+  padding: 0;
+  margin-left: 20px;
+}
+.sidebar-library-yourList{
+}
+.yourList{
+  padding:0px;
+  list-style: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.yourList img{
+  width: 40px;
+  height: 40px;
+}
+.yourList-item{
+  display: flex;
+  /*  khoảng cách giữa các thẻ con của display flex */
+  gap: 10px;
+  padding:10px 5px 10px 30px;
+}
+
+.your-list-like-music{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.your-list-like-music:hover{
+  background: #242424;
+}
+.yourList-item div{
+  display: flex;
+  align-items: center;
+}
+.yourList-item >div div{
+  margin-left: 5px;
+}
+.yourList-item-delete{
+  margin: 10px;
+}
+.yourList-item-delete:hover{
+}
+.expressive-picture{
+  width: 200px;
+  height: 200px;
+}
+.expressive-picture img{
+  width: 100%;
+  height: 100%;
+}
+.expressive-music{
+  position: relative;
+  display: flex;
+  margin-left: 50px;
+}
+.content-heard{
+  font-size: 30px;
+  position: absolute;
+  left: 220px;
+  bottom: 15px;
+}
+.content-createDate{
+  position: absolute;
+  left: 220px;
+  bottom: 85px;
+}
+.content-audio{
+  position: absolute;
+  left: 280px;
+  bottom: 0px;
+  width: 800px;
+}
+.admin{
+  width: 80%;
+  text-align: center;
+  margin:  0 auto;
+}
+table ,
+thead{
+  width: 100%;
+}
+.admin-table th{
+  width: 20%;
+  border-bottom: 1px solid #fff;
+}
+.table-item{
+  width: 20%;
+  border-bottom: 1px solid #fff;
+}
+.table-img{
+  object-fit: cover;
+}
+.btn-addNew{
+  margin: 0.5rem 0px;
+  text-align: start;
+}
+.body-form{
+  position: relative;
+}
+.form{
+  position: absolute;
+  left: 20px;
+  right: 20px;
+
+  margin:  3px auto;
+  border-radius: 15px;
+  width: 60%;
+  background-color:  #fff;
+  color: #000000;
+}
+.form-item{
+  padding: 10px;
+}
+.form-title{
+  text-align: center;
+}
+.form-btn{
+  right: 10px;
+  bottom: 10px;
+  position: absolute;
+  height: 40px;
+  margin-bottom: 30px;
+}
+
+.bnt-box{
+  display: none;
+}
+
+.your-list-like-music:hover .bnt-box{
+  display: block;
+}
+.end-content-none{
+  display: none;
+}
+.end-content-block{
+  display: block;
+}
+/* .scrollable-table-container{
+  max-width: 600px;
+  overflow: auto;
+} */
+.ant-card-head{
+  text-align: center;
+}
+.form-div-back{
+  display: inline-block;
+  padding: 10px;
+  cursor: pointer;
 }
